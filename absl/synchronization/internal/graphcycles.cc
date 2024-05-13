@@ -35,7 +35,10 @@
 
 #include "absl/synchronization/internal/graphcycles.h"
 
-#include <numeric>
+#if defined(__GNUC__) && (__GNUC__ == 11)
+#include <limits>
+#endif
+
 #include <algorithm>
 #include <array>
 #include "absl/base/internal/hide_ptr.h"
